@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const watermarkRoutes = require("./routes/watermark");
 const app = express();
-const PORT = 1515;
+const PORT = 4567;
 
 app.use(
     cors({
@@ -15,8 +15,8 @@ app.use(
 
 
 // api 통신을 위한 모듈 설정
-app.use(bodyParser.json({ extended: true }));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit : "50mb",extended: true }));
+app.use(bodyParser.urlencoded({ limit : "50mb",extended: true }));
 
 
 
